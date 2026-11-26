@@ -121,7 +121,7 @@ uv sync
 
 ## 快速开始
 
-论文使用的受害模型是基于 WideResNet 的防御模型，这里不随仓库发布。`prepare_victim.py` 会在几分钟内
+论文使用的受害模型是基于 WideResNet 的防御模型，这里不随仓库发布。`prepare_victim.py` 会用约十五分钟
 训练一个普通的 CIFAR 分类器，让仓库可以端到端跑起来；换成任意同结构的 checkpoint 同样可用。
 
 ```bash
@@ -132,7 +132,7 @@ uv run python prepare_victim.py --data cifar10 --arch resnet18 --epochs 60
 uv run python attack.py --model victim_cifar10.pt --num-images 10
 ```
 
-`attack.py` 输出 `results/results.csv`（每张图一行）和 `results/summary.json`
+`attack.py` 输出 `results/run/results.csv`（每张图一行）和 `results/run/summary.json`
 （ASR、查询中位数与均值、NED、MCSD）。
 
 调试时可以跑小一点的配置：

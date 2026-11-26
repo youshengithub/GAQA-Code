@@ -155,9 +155,9 @@ On a CPU-only machine, delete the `[[tool.uv.index]]` block and the
 ## Quick start
 
 The paper's victim models are WideResNet-based defended checkpoints that are not
-redistributed here. `prepare_victim.py` trains a plain CIFAR classifier in a few
-minutes so the repository is runnable end to end; any other checkpoint of the
-same architecture works just as well.
+redistributed here. `prepare_victim.py` trains a plain CIFAR classifier in about
+fifteen minutes so the repository is runnable end to end; any other checkpoint of
+the same architecture works just as well.
 
 ```bash
 # 1. a victim to attack (CIFAR-10, ResNet-18, ~87% test accuracy, about 15 min)
@@ -167,8 +167,8 @@ uv run python prepare_victim.py --data cifar10 --arch resnet18 --epochs 60
 uv run python attack.py --model victim_cifar10.pt --num-images 10
 ```
 
-`attack.py` writes `results/results.csv` (one row per image) and
-`results/summary.json` (ASR, median and average queries, NED, MCSD).
+`attack.py` writes `results/run/results.csv` (one row per image) and
+`results/run/summary.json` (ASR, median and average queries, NED, MCSD).
 
 A smaller run, useful while debugging:
 
