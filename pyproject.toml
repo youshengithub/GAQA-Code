@@ -1,0 +1,25 @@
+[project]
+name = "qgd"
+version = "1.0.0"
+description = "Query-efficient generation of adversarial examples for defensive DNNs (GAQA)"
+requires-python = ">=3.10"
+
+dependencies = [
+    "torch>=2.4",
+    "torchvision>=0.19",
+    "numpy>=1.24",
+]
+
+[tool.uv]
+package = false
+
+# CUDA 12.6 wheels, which match the driver of the machine the release was
+# verified on.  Replace or drop this index to run on CPU.
+[[tool.uv.index]]
+name = "pytorch-cu126"
+url = "https://download.pytorch.org/whl/cu126"
+explicit = true
+
+[tool.uv.sources]
+torch = { index = "pytorch-cu126" }
+torchvision = { index = "pytorch-cu126" }

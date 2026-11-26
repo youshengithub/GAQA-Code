@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# datasets and checkpoints are generated locally
+data/
+results/
+*.pt
+*.pth
+*.onnx
+
+.idea/
+.vscode/
+.DS_Store
