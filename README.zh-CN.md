@@ -125,8 +125,8 @@ uv sync
 训练一个普通的 CIFAR 分类器，让仓库可以端到端跑起来；换成任意同结构的 checkpoint 同样可用。
 
 ```bash
-# 1. 准备一个受害模型（CIFAR-10，ResNet-18，测试集约 87%）
-uv run python prepare_victim.py --data cifar10 --arch resnet18 --epochs 30
+# 1. 准备一个受害模型（CIFAR-10，ResNet-18，测试集约 87%，约 15 分钟）
+uv run python prepare_victim.py --data cifar10 --arch resnet18 --epochs 60
 
 # 2. 用论文的设置攻击 10 张测试图
 uv run python attack.py --model victim_cifar10.pt --num-images 10

@@ -160,8 +160,8 @@ minutes so the repository is runnable end to end; any other checkpoint of the
 same architecture works just as well.
 
 ```bash
-# 1. a victim to attack (CIFAR-10, ResNet-18, ~87% test accuracy)
-uv run python prepare_victim.py --data cifar10 --arch resnet18 --epochs 30
+# 1. a victim to attack (CIFAR-10, ResNet-18, ~87% test accuracy, about 15 min)
+uv run python prepare_victim.py --data cifar10 --arch resnet18 --epochs 60
 
 # 2. attack a batch of 10 test images with the paper's settings
 uv run python attack.py --model victim_cifar10.pt --num-images 10
